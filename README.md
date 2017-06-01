@@ -56,3 +56,19 @@ $ docker kill $(docker ps -a -q)
 ```shell
 $ docker rm $(docker ps -a -q)
 ```
+
+11. Running a .net Core WebAPI Application
+```shell
+docker run -d -it \
+    --name simple-dotnet-app \
+    godois/dotnet-core-ubuntu:latest;
+```
+
+12. Running a .net Core WebAPI Application with Binding volume
+```shell
+docker run -d -it \
+    --name simple-dotnet-app \
+    -v /home/marcio/Documents/hw-webapi:/tmp \
+    -p 5000:5000 \
+    godois/dotnet-core-ubuntu:latest;
+```
